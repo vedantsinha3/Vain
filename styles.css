@@ -353,19 +353,245 @@ nav {
 }
 
 
+/* Reset and Base Styles */
 footer {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    background-color: #080808;
+    color: #d1d1d1;
+    padding: 60px 20px 40px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    position: relative;
 }
 
-footer .social-media a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
+/* Remove the old border-bottom from footer-container */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* Add a pseudo-element for the divider line */
+.footer-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 80px; /* Adjust this value to control spacing above social links */
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0)
+    );
+}
+
+/* Brand Section */
+.brand-info {
+    max-width: 300px;
+}
+
+.brand-info h2 {
+    font-size: 28px;
+    color: #8b7dc5; /* Updated to match the purple theme */
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.brand-info p {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+/* Section Headers */
+.footer-section h3 {
     font-size: 16px;
+    font-weight: 600;
+    color: #8b7dc5; /* Updated to match the purple theme */
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Links Styling */
+.footer-section a {
+    display: block;
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    position: relative;
+    padding-left: 0;
+}
+
+.footer-section a:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+.footer-section a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #8b7dc5; /* Updated to match the purple theme */
+    transition: width 0.2s ease;
+    transform: translateY(-50%);
+}
+
+.footer-section a:hover::before {
+    width: 4px;
+}
+
+/* Newsletter Form */
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.newsletter input {
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.newsletter input:focus {
+    outline: none;
+    border-color: #8b7dc5; /* Updated to match the purple theme */
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(139, 125, 197, 0.1);
+}
+
+.newsletter input::placeholder {
+    color: #666;
+}
+
+.newsletter button {
+    background-color: #8b7dc5; /* Updated to match the purple theme */
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.newsletter button:hover {
+    background-color: #9d90d1; /* Lighter purple */
+    transform: translateY(-1px);
+}
+
+.newsletter button:active {
+    transform: translateY(0);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #666;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* Social Media Links */
+.social-media {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media a {
+    color: #8b7dc5; /* Updated to match the purple theme */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-media a:hover {
+    color: #9d90d1; /* Lighter purple */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-container::after {
+        bottom: 120px; /* Adjust for mobile layout */
+    }
+
+    .brand-info {
+        max-width: 100%;
+    }
+
+    .footer-section a {
+        padding-left: 0;
+    }
+
+    .footer-section a:hover {
+        padding-left: 0;
+    }
+
+    .footer-section a::before {
+        display: none;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+}
+
+/* Accessibility Enhancements */
+.newsletter input:focus-visible,
+.newsletter button:focus-visible,
+.footer-section a:focus-visible {
+    outline: 2px solid #8b7dc5;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-section a,
+    .newsletter button,
+    .social-media a {
+        transition: none;
+    }
 }
 
 .about {
