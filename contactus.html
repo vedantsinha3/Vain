@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop All - Vain</title>
+    <title>Contact Us - Vain</title>
     <link rel="icon" type="image/png" href="logo-black.png">
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Main Header for Logo and Navigation -->
-    <header class="shopall-nav">
+    <!-- Header Section -->
+    <header>
         <a href="index.html">
             <div class="logo">
                 <img src="logo.png" alt="Logo">
@@ -26,22 +26,46 @@
         </nav>
     </header>
 
-    <!-- Section Header for Shop All -->
-    <section class="shopall-intro">
-        <h1>Shop All Products</h1>
-        <p>Browse our complete collection of clothing and accessories.</p>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="contact-title">Get in Touch</h2>
+        <p class="contact-subtitle">We’d love to hear from you. Fill out the form below and our team will get back to you within 24 hours.</p>
+        
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name"required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Customer Support</h3>
+                <p><strong>Email:</strong> support@vainfashion.com</p>
+                <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+                <p><strong>Hours:</strong> Mon-Fri, 9AM - 6PM (PST)</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Main Content (Product Listings) -->
-    <main>
-        <section class="shopall-products">
-            <p>Coming Soon: Explore our full range of products.</p>
-            <!-- Placeholder for products. You can add product cards or a grid layout here. -->
-        </section>
-    </main>
-
+    <!-- Footer Section -->
     <footer>
         <div class="footer-container">
+            <!-- Quick Links -->
             <div class="footer-section links">
                 <h3>Quick Links</h3>
                 <a href="aboutus.html">About Us</a>
@@ -49,6 +73,8 @@
                 <a href="collection.html">Collections</a>
                 <a href="contactus.html">Contact</a>
             </div>
+
+            <!-- Customer Support -->
             <div class="footer-section support">
                 <h3>Customer Support</h3>
                 <a href="faq.html">FAQs</a>
@@ -56,6 +82,8 @@
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms & Conditions</a>
             </div>
+
+            <!-- Newsletter -->
             <div class="footer-section newsletter">
                 <h3>Join Our Exclusive List</h3>
                 <p>Subscribe for early access, new arrivals, and VIP offers.</p>
@@ -65,6 +93,8 @@
                 </form>
             </div>
         </div>
+
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
             <p>&copy; 2025 Vain. All rights reserved.</p>
             <div class="social-media">
@@ -74,4 +104,5 @@
             </div>
         </div>
     </footer>
-    
+</body>
+</html>

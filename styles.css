@@ -6,7 +6,7 @@
     --accent-color: #6B5B95; 
     --light-color: #EAEAEA; 
     --text-color: #D1D1D1; 
-    --hover-color: #6b5b95; /
+    --hover-color: darkorchid; 
 }
 
 
@@ -658,21 +658,32 @@ footer {
   }
 
 
-  /* FAQ CSS */
-
-  .faq-section {
-    margin-top: 10%;
-    padding: 40px;
-    background-color: #f9f9f9;
+ .faq-section {
+    margin-top: 5%;
+    padding: 60px 40px;
+    background-color: #000000;
     font-family: 'Inter', sans-serif;
+    border-radius: 0; /* Sharp edges for the section */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .faq-title {
     text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+.faq-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 10px auto 0;
+    border-radius: 0; /* Sharp edges for the underline */
 }
 
 .faq-container {
@@ -681,51 +692,240 @@ footer {
 }
 
 .faq-item {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0; /* Sharp edges for the FAQ item */
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
 }
 
 .faq-question {
     width: 100%;
-    padding: 15px;
+    padding: 20px;
     background-color: transparent;
-    border: 2px solid #ccc;
-    color: #333;
+    border: 2px solid white; /* White border */
+    color: white;
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 0; /* Sharp edges for the question */
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 300;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(45deg);
+    color: #ffffff;
 }
 
 .faq-question:hover {
-    background-color: #f0f0f0;
-    color: #007BFF;
+    border-color: white; 
+    background-color: transparent;
+}
+
+.faq-question:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
 .faq-answer {
-    padding: 15px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-top: none;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
     display: none;
-    border-radius: 0 0 10px 10px;
-    margin-top: 5px;
+    border-radius: 0; /* Sharp edges for the answer */
+    margin-top: -5px;
+    transform-origin: top;
+    transition: all 0.3s ease;
 }
 
 .faq-answer p {
     margin: 0;
-    font-size: 14px;
-    color: #666;
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 20px 0;
 }
 
-/* Accordion Effect */
-.faq-question:focus + .faq-answer,
 .faq-question.active + .faq-answer {
     display: block;
+    animation: slideDown 0.3s ease forwards;
 }
 
 .faq-question.active {
-    background-color: #007BFF;
+    background-color: transparent;
     color: #fff;
+    border-color:darkorchid; /* Blue border when active */
+    border-radius: 0; /* Sharp edges for the active question */
 }
+
+/* Keyframes for smooth dropdown animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 50px;
+}
+
+.contact-title {
+    font-size: 2rem;
+    margin-top: 5%;
+    color: white;
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 4rem;
+  }
+  
+  .contact-form {
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #a0a0a0);
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .form-subtitle {
+    color: #888;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+  
+  .form-group {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .form-group label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #888;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 0.9rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+  }
+  
+  .form-group input:focus + label,
+  .form-group textarea:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    transform: translateY(-2.5rem);
+    font-size: 0.8rem;
+    color: white;
+  }
+  
+
+  
+  .customer-support {
+    color: white;
+  }
+  
+  .customer-support h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .support-info {
+    margin-bottom: 1.5rem;
+  }
+  
+  .support-info p {
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+  
+  .support-info strong {
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Error states */
+  .error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  
+  .form-group.error input,
+  .form-group.error textarea {
+    border-color: #ff4444;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .contact-form {
+      padding: 2rem;
+    }
+  }
