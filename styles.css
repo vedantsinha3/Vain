@@ -149,7 +149,6 @@ nav {
     opacity: 0.9;
 }
 
-/* Luxury Button Base */
 .btn {
     position: relative;
     padding: 18px 45px;
@@ -160,7 +159,7 @@ nav {
     text-transform: uppercase;
     color: var(--light-color);
     background: transparent;
-    border: none;
+    border: 2px solid var(--light-color);
     cursor: pointer;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
@@ -189,26 +188,6 @@ nav {
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-/* Shine Effect */
-.btn-shine {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent 45%,
-        rgba(255, 255, 255, 0.1) 48%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.1) 52%,
-        transparent 55%
-    );
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-    z-index: 1;
-}
-
 /* Background Scale Effect */
 .btn-background {
     position: absolute;
@@ -216,7 +195,7 @@ nav {
     left: 50%;
     width: 100%;
     height: 100%;
-    background: var(--hover-color);
+    background: transparent;
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
     z-index: -1;
@@ -238,24 +217,17 @@ nav {
     opacity: 0;
 }
 
-.btn:hover .btn-shine {
-    transform: translateX(0) translateY(0) rotate(45deg);
-}
-
 .btn:hover .btn-background {
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* Click Effect */
-.btn:active {
-    transform: scale(0.95);
-}
 
 /* Optional Text Reveal Effect */
 .btn span {
     position: relative;
     z-index: 1;
 }
+
 
 .btn .btn-text-hidden {
     position: absolute;
@@ -264,6 +236,7 @@ nav {
     transform: translate(-50%, 100%);
     opacity: 0;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    color: white;
 }
 
 .btn:hover .btn-text-hidden {
@@ -290,6 +263,14 @@ nav {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .btn {
+        padding: 14px 28px;
+    }
+}
+
+
+/* Responsive adjustments */
+ @media (max-width: 768px) {
     .hero-content h2 {
         font-size: 3.5rem;
     }
@@ -302,8 +283,7 @@ nav {
     .btn {
         padding: 14px 28px;
     }
-}
-
+} 
 .collection, .denim-intro, .trending-intro, .shopall-intro, .newreleases-intro {
     padding: 100px 5%;
     text-align: center;
@@ -382,18 +362,13 @@ footer {
     bottom: 80px; 
     height: 1px;
     background: linear-gradient(
-    to right,
-    white,
-    gray 50%,
-    black), 
-    linear-gradient(
-    to left,
-    white,
-    gray 50%,
-    black
-);
-
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0)
+    );
 }
+
 /* Section Headers */
 .footer-section h3 {
     font-size: 16px;
@@ -442,6 +417,13 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.newsletter p {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .newsletter input {
@@ -493,15 +475,15 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: -20px;
+    padding-top: 20px; /* Changed from negative value */
     font-size: 14px;
     color: #666;
     max-width: 1400px;
-    width: 90vh;
+    width: 100%; /* Changed from 90vh */
     margin: 0 auto;
     margin-top: 20px;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
 }
 
 /* Social Media Links */
