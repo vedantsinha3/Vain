@@ -1,34 +1,24 @@
+// backend/index.js
 const express = require('express');
-const { Pool } = require('pg'); // Import the Pool object
+const db = require('./db');
 const app = express();
 const port = 3000;
 
-// Database connection pool configuration
-const pool = new Pool({
-  user: 'vedantsinha',        // Replace with your PostgreSQL username
-  host: 'localhost',
-  database: 'vain_ecommerce', // Replace with your database name
-  password: '',    // Replace with your PostgreSQL password
-  port: 5432,                   // Default PostgreSQL port
-});
+app.use(express.json());
 
-// Test the database connection
-pool.connect((err, client, release) => {
-  if (err) {
-    return console.error('Error acquiring client', err.stack);
-  }
-  client.query('SELECT NOW()', (err, result) => {
-    release(); // release the client back to the pool
-
-    if (err) {
-      return console.error('Error executing query', err.stack);
-    }
-    console.log('Database connected successfully:', result.rows[0]);
-  });
-});
-
+// Routes would go here
 app.get('/', (req, res) => {
   res.send('Hello from the backend!');
+});
+
+// Example using the db module
+app.get('/products', async (req, res) => {
+  try {
+    const { rows } = await db.query('SELECT * FROM products');
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 app.listen(port, () => {
