@@ -6,9 +6,11 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-bg"></div>
+      
+
       <div className="hero-content">
         <nav className="hero-nav">
-          <Link to="/">HOME</Link>
+          <Link to="/home">HOME</Link>
           <Link to="/trending">TRENDING</Link>
           <Link to="/new-releases">NEW RELEASES</Link>
           <Link to="/shop-all">SHOP ALL</Link>
