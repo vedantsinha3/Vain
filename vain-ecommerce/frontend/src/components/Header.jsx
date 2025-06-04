@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/components/header.css';
+import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/components/header.css';
 
 const Header = () => {
   return (
-    <header>
+    <>
+    <header className="site-header">
       <Link to="/">
-        <div className="hero-logo">
-        <img src="/logo.png" alt="Vain Logo" />
+        <div className="logo">
+        <img src="/logo.png" alt="Logo" />
       </div>
       </Link>
       <nav>
@@ -20,6 +21,7 @@ const Header = () => {
         </ul>
       </nav>
     </header>
+    </>
   );
 };
 
