@@ -265,47 +265,13 @@
      .btn {
        padding: 14px 28px;
      }
-   
-     /* Adjust footer layout */
-     .footer-container {
-       grid-template-columns: 1fr;
-       gap: 30px;
-       text-align: center;
-     }
-   
-     .footer-container::after {
-       bottom: 120px;
-     }
-   
-     .footer-section a {
-       padding-left: 0;
-     }
-   
-     .footer-section a:hover {
-       padding-left: 0;
-     }
-   
-     .footer-section a::before {
-       display: none;
-     }
-   
-     .footer-bottom {
-       flex-direction: column;
-       gap: 20px;
-       text-align: center;
-     }
-   
-     .social-media {
-       justify-content: center;
-     }
-   }
+    }
    
    @media (prefers-reduced-motion: reduce) {
      .hero-content,
      .hero-content h2,
      .hero-content p,
      .btn,
-     .footer-section a,
      .newsletter button,
      .social-media a {
        transition: none;
