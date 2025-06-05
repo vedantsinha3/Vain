@@ -18,22 +18,6 @@ footer {
     position: relative;
   }
   
-  /* Divider line */
-  .footer-container::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 80px;
-    height: 1px;
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.1) 50%,
-      rgba(255, 255, 255, 0)
-    );
-  }
-  
   /* Section Titles */
   .footer-section h3 {
     font-size: 16px;
@@ -169,3 +153,4 @@ footer {
     color: #9d90d1;
     transform: translateY(-2px);
   }
+
