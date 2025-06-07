@@ -14,7 +14,6 @@
     background: var(--vain-bg);
     color: var(--vain-text-secondary);
     padding: 60px 20px 30px;
-    font-family: 'Inter', system-ui, sans-serif;
     line-height: 1.6;
     border-top: 1px solid var(--vain-border);
   }
