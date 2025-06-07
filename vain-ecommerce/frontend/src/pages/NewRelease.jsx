@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/pages/NewRelease.css'; // Create this and paste your CSS
+import ProductCard from '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/ProductCard.jsx'
 
 const products = [
   { title: 'Oversized Hoodie', price: '$85', status: 'Available Now', badge: true },
@@ -18,7 +19,6 @@ const descriptions = {
   'Vintage Tee': 'Soft vintage-wash cotton tee with retro graphics and relaxed fit.',
   'Leather Jacket': 'Genuine leather moto jacket with premium hardware and quilted details.',
   'Wide Leg Jeans': 'High-waisted wide leg jeans in premium Japanese denim.',
-  'Bomber Jacket': 'Limited edition bomber with satin lining and custom embroidery.',
 };
 
 export default function NewRelease() {
@@ -56,18 +56,16 @@ export default function NewRelease() {
         </div>
 
         <div className="release-grid">
-          {products.map((product) => (
-            <div key={product.title} className="release-card" onClick={() => showDetails(product.title)}>
-              <div className="release-image">
-                {product.badge && <div className="new-badge">NEW</div>}
-              </div>
-              <div className="release-info">
-                <h3 className="release-title">{product.title}</h3>
-                <div className="release-price">{product.price}</div>
-                <div className="release-status">{product.status}</div>
-              </div>
-            </div>
-          ))}
+        {products.map((product) => (
+          <ProductCard
+            key={product.title}
+            title={product.title}
+            price={product.price}
+            status={product.status}
+            badge={product.badge}
+            onClick={() => showDetails(product.title)}
+          />
+        ))}
         </div>
 
         <div className="coming-soon-section">

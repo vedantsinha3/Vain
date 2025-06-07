@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/Header.jsx';
 import Footer from '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/Footer.jsx';
 import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/pages/Trending.css';
+import ProductCard from '../components/ProductCard';
 
 const sampleProducts = [
   {
@@ -46,21 +47,18 @@ export default function Trending() {
 
         {/* Product Gallery */}
         <div className="trending-products">
-          <div className="gallery">
-            {sampleProducts.map((product) => (
-              <div key={product.id} className="item">
-                <img src={product.imageUrl} alt={product.name} />
-                <h3 style={{ color: 'var(--light-color)', margin: '0 0 10px' }}>
-                  {product.name}
-                </h3>
-                <p style={{ color: 'var(--text-color)', margin: 0 }}>
-                  {product.price}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="gallery">
+          {sampleProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              title={product.name}
+              price={product.price}
+              imageUrl={product.imageUrl}
+            />
+          ))}
         </div>
-      </main>
+      </div>
+    </main>
 
       {/* Site footer */}
       <Footer />
