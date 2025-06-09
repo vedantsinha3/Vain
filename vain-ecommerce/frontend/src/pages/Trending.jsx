@@ -3,6 +3,7 @@ import Header from '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/
 import Footer from '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/Footer.jsx';
 import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/pages/Trending.css';
 import ProductCard from '../components/ProductCard';
+import SectionHeader from '../components/SectionHeader';
 
 const sampleProducts = [
   {
@@ -10,19 +11,26 @@ const sampleProducts = [
     name: 'Vintage Denim Jacket',
     imageUrl: '/images/trending1.jpg',
     price: '$120',
+    status: 'Trending Now',
+    badge: true
   },
+
   {
     id: 2,
     name: 'Distressed Jeans',
     imageUrl: '/images/trending2.jpg',
     price: '$80',
+    
   },
   {
     id: 3,
     name: 'Leather Bomber Jacket',
     imageUrl: '/images/trending3.jpg',
     price: '$200',
+    status: 'Trending Now',
+    badge: true
   },
+  
   {
     id: 4,
     name: 'Oversized T-Shirt',
@@ -36,31 +44,26 @@ export default function Trending() {
   return (
     <div>
       <Header />
-
-      {/* Push content down if Header is fixed (adjust --header-height in globals) */}
       <main style={{ paddingTop: 'var(--header-height)' }}>
-        {/* Intro Section */}
-        <section className="trending-intro">
-          <h1>Trending</h1>
-          <p>Discover the latest styles that everyone is talking about.</p>
-        </section>
-
-        {/* Product Gallery */}
+        <SectionHeader
+          title="Trending"
+          subtitle="Discover the latest styles that everyone is talking about."
+        />
         <div className="trending-products">
         <div className="gallery">
           {sampleProducts.map((product) => (
             <ProductCard
-              key={product.id}
-              title={product.name}
-              price={product.price}
-              imageUrl={product.imageUrl}
-            />
+            key={product.id}
+            title={product.name}
+            price={product.price}
+            imageUrl={product.imageUrl}
+            status={product.status}
+            badge={product.badge}
+          />          
           ))}
         </div>
       </div>
     </main>
-
-      {/* Site footer */}
       <Footer />
     </div>
   );

@@ -3,6 +3,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/pages/NewRelease.css'; // Create this and paste your CSS
 import ProductCard from '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/ProductCard.jsx'
+import SectionHeader from '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/SectionHeader.jsx';
+
 
 const products = [
   { title: 'Oversized Hoodie', price: '$85', status: 'Available Now', badge: true },
@@ -49,11 +51,11 @@ export default function NewRelease() {
     <>
       <Header />
       <div className="page">
-        <div className="hero-section">
-          <h1 className="hero-title">New Releases</h1>
-          <div className="hero-underline"></div>
-          <p className="hero-subtitle">Discover the latest styles that everyone is talking about.</p>
-        </div>
+      <SectionHeader
+        title="New Releases"
+        subtitle="Discover the latest styles that everyone is talking about."
+      />
+ 
 
         <div className="release-grid">
         {products.map((product) => (

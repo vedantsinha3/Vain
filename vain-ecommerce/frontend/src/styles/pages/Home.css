@@ -23,7 +23,6 @@
      padding: 0;
      background-color: var(--primary-color);
      color: var(--text-color);
-     font-family: 'Helvetica Neue', sans-serif;
    }
    
    
@@ -87,7 +86,6 @@
    }
    
    .hero-content h2 {
-     font-family: 'Cargo', system-ui, sans-serif;
      font-size: clamp(2.5rem, 8vw, 4.5rem);
      font-weight: 800;
      text-transform: uppercase;
