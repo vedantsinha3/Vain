@@ -1,251 +1,488 @@
 /* ======================
    CSS Custom Properties
    ====================== */
-   :root {
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #c800ff 100%);
-    --gradient-secondary: linear-gradient(135deg, #ffffff 0%, #000000 100%);
-    --gradient-accent: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-    --shadow-hover: 0 20px 60px rgba(31, 38, 135, 0.5);
-    --glass-border: rgba(255, 255, 255, 0.15);
-  }
-  
-  /* ======================
-     Intro Section
-     ====================== */
-  .trending-intro {
-    padding: 120px 5% 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .trending-intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-primary);
-    opacity: 0.03;
-    z-index: -1;
-  }
-  
-  .trending-intro h1 {
-    font-size: clamp(28px, 5vw, 48px);
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 80px;
-    letter-spacing: 3px;
-    background: var(--gradient-secondary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    animation: titleGlow 3s ease-in-out infinite alternate;
-  }
-  
-  .trending-intro h1::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: var(--gradient-accent);
-    border-radius: 2px;
-    animation: underlineExpand 2s ease-out;
-  }
-  
-  /* @keyframes titleGlow {
-    0% { filter: drop-shadow(var(--text-glow)); }
-    100% { filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5)); }
-  } */
-  
-  /* @keyframes underlineExpand {
-    0% { width: 0; }
-    100% { width: 100px; }
-  } */
-  
-  /* ======================
-     Product Gallery
-     ====================== */
-  .trending-products {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5% 60px;
-    position: relative;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 50px;
-    max-width: 1400px;
-    width: 100%;
-    position: relative;
-  }
-  
-  /* Floating particles animation */
-  .gallery::before,
-  .gallery::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: var(--gradient-accent);
-    border-radius: 50%;
-    z-index: -1;
-  }
-  
-  .gallery::before {
-    top: 10%;
-    left: 15%;
-    animation-delay: -2s;
-  }
-  
-  .gallery::after {
-    top: 60%;
-    right: 20%;
-    animation-delay: -4s;
-  }
-  
-  
-  /* ======================
-     Product Cards
-     ====================== */
-  .item {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--shadow-soft);
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transform-style: preserve-3d;
-  }
-  
+:root {
+  --trending-primary: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  --trending-secondary: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  --trending-accent: linear-gradient(135deg, #3182ce 0%, #4299e1 100%);
+  --trending-highlight: linear-gradient(135deg, #63b3ed 0%, #90cdf4 100%);
+  --glass-bg: rgba(45, 55, 72, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 20px 60px rgba(49, 130, 206, 0.3);
+  --shadow-glow: 0 0 30px rgba(66, 153, 225, 0.3);
+}
 
-  .item:hover::after {
-    left: 100%;
+/* ======================
+   Page Layout
+   ====================== */
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* ======================
+   Hero Section
+   ====================== */
+.trending-hero {
+  background: var(--trending-primary);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  margin: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-soft);
+}
+
+.trending-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--trending-accent);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ======================
+   Trending Stats
+   ====================== */
+.trending-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(66, 153, 225, 0.4);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #90cdf4;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.stat-trend {
+  font-size: 0.8rem;
+  color: #68d391;
+  font-weight: 600;
+}
+
+/* ======================
+   Categories Section
+   ====================== */
+.categories-section {
+  margin: 5rem 0;
+}
+
+.categories-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: var(--trending-accent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.category-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(66, 153, 225, 0.4);
+}
+
+.category-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-card p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.category-count {
+  font-size: 1rem;
+  color: #4299e1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.trending-items {
+  font-size: 0.9rem;
+  color: #90cdf4;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid #90cdf4;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* ======================
+   Products Section
+   ====================== */
+.products-section {
+  margin: 5rem 0;
+}
+
+.products-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Enhanced ProductCard styling for trending theme */
+.trending-grid .release-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+
+.trending-grid .release-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(66, 153, 225, 0.4);
+}
+
+.trending-grid .release-image {
+  height: 280px;
+  background: var(--trending-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.trending-grid .release-image::before {
+  content: 'TRENDING';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+.trending-grid .new-badge {
+  background: var(--trending-accent);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+/* ======================
+   Alerts Section
+   ====================== */
+.alerts-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.alerts-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.alerts-section > p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alerts-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(66, 153, 225, 0.3);
+  transform: translateY(-2px);
+}
+
+.feature h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #4299e1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.feature p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.trend-alert-btn {
+  background: var(--trending-accent);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  margin-top: 2rem;
+}
+
+.trend-alert-btn:hover {
+  background: var(--trending-highlight);
+  transform: translateY(-2px);
+}
+
+/* ======================
+   Responsive Design
+   ====================== */
+@media (max-width: 768px) {
+  .page {
+    padding: 2rem 1rem;
   }
-  
-  .item img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    transition: all 0.4s ease;
-    filter: brightness(0.9) contrast(1.1);
+
+  .trending-hero {
+    padding: 3rem 2rem;
+    margin: 2rem 0;
   }
-  
-  .item:hover img {
-    filter: brightness(1.1) contrast(1.2) saturate(1.1);
-    transform: scale(1.05);
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
   }
-  
-  /* ======================
-     Enhanced Typography
-     ====================== */
-  .item h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.95);
-    transition: color 0.3s ease;
+
+  .trending-stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
   }
-  
-  .item:hover h3 {
-    color: rgba(255, 255, 255, 1);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+
+  .stat-card {
+    padding: 1.5rem;
   }
-  
-  .item p {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-    margin-bottom: 20px;
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  
-  .item .price {
-    font-size: 18px;
-    font-weight: 600;
-    background: var(--gradient-accent);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+  .category-card {
+    padding: 2rem;
   }
-  
-  /* ======================
-     Responsive Enhancements
-     ====================== */
-  @media (max-width: 768px) {
-    .trending-intro {
-      padding: 80px 3% 60px;
-    }
-    
-    .trending-intro h1 {
-      margin-bottom: 60px;
-      letter-spacing: 2px;
-    }
-    
-    .gallery {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    
-    .item {
-      padding: 25px;
-    }
-    
-    .item img {
-      height: 180px;
-    }
+
+  .trending-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
   }
-  
-  @media (max-width: 480px) {
-    .trending-intro {
-      padding: 60px 3% 40px;
-    }
-    
-    .gallery {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-    
-    .item {
-      padding: 20px;
-    }
+
+  .alerts-section {
+    padding: 3rem 2rem;
   }
-  
-  /* ======================
-     Performance Optimizations
-     ====================== */
-  .item {
-    will-change: transform;
+
+  .alerts-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  
-  .item img {
-    will-change: transform, filter;
+
+  .categories-section h2,
+  .products-section h2,
+  .alerts-section h2 {
+    font-size: 2rem;
   }
-  
-  /* Reduce motion for accessibility */
-  @media (prefers-reduced-motion: reduce) {
-    .item,
-    .item img,
-    .trending-intro h1 {
-      transition: none;
-      animation: none;
-    }
-    
-    .item:hover {
-      transform: translateY(-5px) scale(1.02);
-    }
+}
+
+@media (max-width: 480px) {
+  .trending-hero {
+    padding: 2rem 1.5rem;
   }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .category-card {
+    padding: 1.5rem;
+  }
+
+  .alerts-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .feature {
+    padding: 1.5rem;
+  }
+
+  .trend-alert-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ======================
+   Animation Preferences
+   ====================== */
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .trending-grid .release-card,
+  .feature,
+  .stat-card,
+  .trend-alert-btn {
+    transition: none;
+  }
+
+  .category-card:hover,
+  .trending-grid .release-card:hover,
+  .feature:hover,
+  .stat-card:hover,
+  .trend-alert-btn:hover {
+    transform: none;
+  }
+}
