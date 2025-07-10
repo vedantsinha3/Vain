@@ -26,27 +26,18 @@
    Hero Section
    ====================== */
 .denim-hero {
-  background: var(--denim-primary);
+  background: #000000;
+  border: 2px solid #ffffff;
   border-radius: 20px;
   padding: 4rem 3rem;
   margin: 3rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: var(--shadow-soft);
 }
 
 .denim-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  z-index: 1;
+  display: none;
 }
 
 .hero-content {
@@ -60,16 +51,12 @@
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e0 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
