@@ -2,14 +2,13 @@
    CSS Custom Properties
    ====================== */
 :root {
-  --trending-primary: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-  --trending-secondary: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-  --trending-accent: linear-gradient(135deg, #3182ce 0%, #4299e1 100%);
-  --trending-highlight: linear-gradient(135deg, #63b3ed 0%, #90cdf4 100%);
-  --glass-bg: rgba(45, 55, 72, 0.1);
+  --trending-primary: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  --trending-secondary: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  --trending-accent: linear-gradient(135deg, #4299e1 0%, #63b3ed 100%);
+  --glass-bg: rgba(26, 54, 93, 0.1);
   --glass-border: rgba(255, 255, 255, 0.15);
   --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 20px 60px rgba(49, 130, 206, 0.3);
+  --shadow-hover: 0 20px 60px rgba(31, 38, 135, 0.5);
   --shadow-glow: 0 0 30px rgba(66, 153, 225, 0.3);
 }
 
