@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import SectionHeader from '../components/SectionHeader';
 import ProductCard from '../components/ProductCard';
 import '../styles/pages/Trending.css';
+import Button from '../components/Button';
 
 const trendingProducts = [
   {
@@ -197,9 +198,9 @@ export default function Trending() {
               <p>Track what your favorite celebrities and influencers are wearing.</p>
             </div>
           </div>
-          <button className="trend-alert-btn" onClick={trackTrend}>
+          <Button className="btn" onClick={trackTrend}>
             Get Trend Alerts
-          </button>
+          </Button>
         </div>
       </div>
       <Footer />

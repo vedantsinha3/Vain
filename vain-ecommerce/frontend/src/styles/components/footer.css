@@ -87,9 +87,8 @@
     border-color: var(--vain-accent);
   }
   
-  .newsletter button {
-    background: var(--vain-accent);
-    color: var(--vain-text);
+  .btn-subscribe {
+
     border: none;
     padding: 12px 20px;
     border-radius: 4px;
@@ -99,7 +98,7 @@
     transition: opacity 0.2s ease;
   }
   
-  .newsletter button:hover {
+  .btn-subscribe:hover {
     opacity: 0.9;
   }
   

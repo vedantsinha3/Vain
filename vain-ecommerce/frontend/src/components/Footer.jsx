@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/components/footer.css';
+import Button from './Button';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -76,9 +77,9 @@ const Footer = () => {
                 aria-label="Email address for newsletter subscription"
               />
             </div>
-            <button type="submit" aria-label="Subscribe to newsletter">
+            <Button className="btn-subscribe" type="submit" aria-label="Subscribe to newsletter">
               Subscribe
-            </button>
+            </Button>
           </form>
         </div>
       </div>

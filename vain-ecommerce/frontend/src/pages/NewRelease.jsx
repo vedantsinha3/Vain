@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import SectionHeader from '../components/SectionHeader';
 import '../styles/pages/NewRelease.css';
+import Button from '../components/Button';
 
 const NewRelease = () => {
   const [email, setEmail] = useState('');
@@ -175,9 +176,9 @@ const NewRelease = () => {
                   <span className="release-date">Expected: {release.expectedDate}</span>
                   <span className="release-status">{release.status}</span>
                 </div>
-                <button className="notify-btn" onClick={notifyMe}>
+                <Button className="btn" onClick={notifyMe}>
                   {release.status === 'Pre-Order Available' ? 'Pre-Order' : 'Notify Me'}
-                </button>
+                </Button>
               </div>
             ))}
           </div>
