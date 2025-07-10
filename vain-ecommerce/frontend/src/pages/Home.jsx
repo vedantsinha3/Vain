@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/pages/Home.css';
-import Footer from "/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/Footer.jsx"
-import Header from "/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/components/Header.jsx"
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const Home = () => {
   return (
@@ -14,11 +15,11 @@ const Home = () => {
         <div className="hero-content">
           <h2>Denim Redefined</h2>
           <p>Timeless denim. Modern attitude. Discover Vain's latest drop.</p>
-          <a href="/collection" className="btn">
+          <Link to="/shop-all" className="btn">
             <div className="btn-background"></div>
             <span className="btn-text-visible">Shop Now</span>
             <span className="btn-text-hidden">The Collection</span>
-          </a>
+          </Link>
         </div>
       </section>
 

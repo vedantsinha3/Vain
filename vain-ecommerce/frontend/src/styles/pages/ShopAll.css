@@ -1,0 +1,411 @@
+/* ======================
+   CSS Custom Properties
+   ====================== */
+:root {
+  --shop-primary: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  --shop-secondary: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  --shop-accent: linear-gradient(135deg, #3182ce 0%, #4299e1 100%);
+  --shop-highlight: linear-gradient(135deg, #63b3ed 0%, #90cdf4 100%);
+  --glass-bg: rgba(45, 55, 72, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 20px 60px rgba(49, 130, 206, 0.3);
+}
+
+/* ======================
+   Page Layout
+   ====================== */
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* ======================
+   Hero Section
+   ====================== */
+.shop-hero {
+  background: var(--shop-primary);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  margin: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-soft);
+}
+
+.shop-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--shop-accent);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ======================
+   Categories Section
+   ====================== */
+.categories-section {
+  margin: 5rem 0;
+}
+
+.categories-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.categories-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-btn {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  color: var(--header-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 120px;
+}
+
+.category-btn:hover {
+  background: rgba(66, 153, 225, 0.1);
+  border-color: rgba(66, 153, 225, 0.4);
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: var(--shop-accent);
+  color: #ffffff;
+  border-color: var(--shop-accent);
+}
+
+.category-name {
+  font-weight: 700;
+}
+
+.category-count {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* ======================
+   Products Section
+   ====================== */
+.products-section {
+  margin: 5rem 0;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.products-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.products-count {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Enhanced ProductCard styling for shop theme */
+.shop-grid .release-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.shop-grid .release-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(66, 153, 225, 0.4);
+}
+
+.shop-grid .release-image {
+  height: 280px;
+  background: var(--shop-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-grid .release-image::before {
+  content: 'SHOP';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+.shop-grid .new-badge {
+  background: var(--shop-accent);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+/* ======================
+   Highlights Section
+   ====================== */
+.highlights-section {
+  margin: 5rem 0;
+}
+
+.highlights-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.highlight-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(66, 153, 225, 0.4);
+}
+
+.highlight-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.highlight-card p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.highlight-count {
+  font-size: 0.9rem;
+  color: #4299e1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #4299e1;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+/* ======================
+   Responsive Design
+   ====================== */
+@media (max-width: 1024px) {
+  .categories-filter {
+    gap: 0.75rem;
+  }
+  
+  .category-btn {
+    padding: 0.8rem 1.2rem;
+    min-width: 100px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .shop-hero {
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .categories-filter {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .category-btn {
+    width: 200px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .categories-section h2,
+  .products-header h2,
+  .highlights-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .category-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .highlight-card {
+    padding: 2rem;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ======================
+   Animation Preferences
+   ====================== */
+@media (prefers-reduced-motion: reduce) {
+  .category-btn,
+  .shop-grid .release-card,
+  .highlight-card {
+    transition: none;
+  }
+
+  .category-btn:hover,
+  .shop-grid .release-card:hover,
+  .highlight-card:hover {
+    transform: none;
+  }
+}
+
+/* ======================
+   Focus States
+   ====================== */
+.category-btn:focus {
+  outline: 2px solid var(--shop-accent);
+  outline-offset: 2px;
+} 
