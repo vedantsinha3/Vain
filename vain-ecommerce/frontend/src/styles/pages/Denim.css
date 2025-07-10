@@ -1,0 +1,411 @@
+/* ======================
+   CSS Custom Properties
+   ====================== */
+:root {
+  --denim-primary: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  --denim-secondary: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  --denim-accent: linear-gradient(135deg, #4299e1 0%, #63b3ed 100%);
+  --glass-bg: rgba(26, 54, 93, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 20px 60px rgba(31, 38, 135, 0.5);
+}
+
+/* ======================
+   Page Layout
+   ====================== */
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* ======================
+   Hero Section
+   ====================== */
+.denim-hero {
+  background: var(--denim-primary);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  margin: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-soft);
+}
+
+.denim-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ======================
+   Collections Section
+   ====================== */
+.collections-section {
+  margin: 5rem 0;
+}
+
+.collections-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.collection-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.collection-card:hover::before {
+  left: 100%;
+}
+
+.collection-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.collection-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.collection-card p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.featured-item {
+  font-size: 0.9rem;
+  color: #4299e1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #4299e1;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+/* ======================
+   Products Section
+   ====================== */
+.products-section {
+  margin: 5rem 0;
+}
+
+.products-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.denim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Enhance ProductCard styling for denim theme */
+.denim-grid .release-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+
+.denim-grid .release-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(66, 153, 225, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.denim-grid .release-card:hover::after {
+  left: 100%;
+}
+
+.denim-grid .release-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(66, 153, 225, 0.4);
+}
+
+.denim-grid .release-image {
+  height: 280px;
+  background: var(--denim-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.denim-grid .release-image::before {
+  content: 'DENIM';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+.denim-grid .new-badge {
+  background: var(--denim-accent);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.4);
+}
+
+/* ======================
+   Care Section
+   ====================== */
+.care-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.care-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.care-section > p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.care-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.care-tip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.care-tip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(66, 153, 225, 0.3);
+  transform: translateY(-5px);
+}
+
+.care-tip h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #4299e1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.care-tip p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* ======================
+   Responsive Design
+   ====================== */
+@media (max-width: 768px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .denim-hero {
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .collection-card {
+    padding: 2rem;
+  }
+
+  .denim-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .care-section {
+    padding: 3rem 2rem;
+  }
+
+  .care-tips {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .collections-section h2,
+  .products-section h2,
+  .care-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .denim-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .collection-card {
+    padding: 1.5rem;
+  }
+
+  .care-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .care-tip {
+    padding: 1.5rem;
+  }
+}
+
+/* ======================
+   Animation Preferences
+   ====================== */
+@media (prefers-reduced-motion: reduce) {
+  .collection-card,
+  .denim-grid .release-card,
+  .care-tip {
+    transition: none;
+  }
+
+  .collection-card:hover,
+  .denim-grid .release-card:hover,
+  .care-tip:hover {
+    transform: none;
+  }
+}
