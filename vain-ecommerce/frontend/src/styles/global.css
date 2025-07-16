@@ -44,6 +44,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
+/* Global page spacing to account for fixed header */
+.page {
+  padding-top: calc(var(--header-height) + 2rem) !important;
+}
+
 /* Optional: Section layout spacing */
 .section-header {
   padding-top: 1rem;
