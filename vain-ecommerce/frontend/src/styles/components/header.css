@@ -3,57 +3,106 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #000000;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .site-header .logo {
+    border-bottom: 1px solid #333333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.site-header .logo {
     display: flex;
     align-items: center;
-  }
-  
-  .site-header .logo img {
+}
+
+.site-header .logo img {
     width: 50px;
     height: auto;
     transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  
-  .site-header .logo img:hover {
-    transform: scale(1.1);
-  }
-  
-  /* NAV */
-  .site-header nav {
+    filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.site-header .logo img:hover {
+    transform: scale(1.05);
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(200deg); /* Blue tint on hover */
+}
+
+/* NAV */
+.site-header nav {
     margin-left: auto;
-  }
-  
-  .site-header nav ul {
+}
+
+.site-header nav ul {
     display: flex;
     gap: 35px;
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  
-  .site-header nav ul li a {
-    color: var(--light-color);
+}
+
+.site-header nav ul li a {
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .site-header nav ul li a:hover {
-    color: var(--hover-color);
-    transform: translateY(-2px);
-  }
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.site-header nav ul li a:hover {
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.site-header nav ul li a:active {
+    transform: translateY(0);
+}
+
+/* Active/Current page indicator */
+.site-header nav ul li a.active {
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 15px 20px;
+    }
+    
+    .site-header nav ul {
+        gap: 20px;
+    }
+    
+    .site-header nav ul li a {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 12px 15px;
+    }
+    
+    .site-header nav ul {
+        gap: 15px;
+    }
+    
+    .site-header nav ul li a {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+    
+    .site-header .logo img {
+        width: 40px;
+    }
+}

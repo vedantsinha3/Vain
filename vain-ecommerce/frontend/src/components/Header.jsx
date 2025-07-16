@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/components/header.css';
+import '../styles/components/header.css';
 
 const Header = () => {
   return (
