@@ -1,5 +1,5 @@
 import React from 'react';
-import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/components/productCard.css'; // Create CSS for this if needed
+import '../styles/components/productCard.css';
 
 const ProductCard = ({ title, price, status, badge, onClick, imageUrl, subtitle }) => {
   return (
