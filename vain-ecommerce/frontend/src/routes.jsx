@@ -8,6 +8,7 @@ import NewReleases from './pages/NewRelease';
 import Trending from './pages/Trending';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
 import Shipping from './pages/Shipping';
 
 const AppRoutes = () => {
@@ -23,6 +24,7 @@ const AppRoutes = () => {
         <Route path="/trending" element={<Trending />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/shipping" element={<Shipping />} />
       </Routes>
     </Router>

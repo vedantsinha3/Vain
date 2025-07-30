@@ -1,6 +1,6 @@
 // components/SectionHeader.jsx
 import React from 'react';
-import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/components/SectionHeader.css';
+import '../styles/components/SectionHeader.css';
 
 const SectionHeader = ({ title, subtitle, center = true }) => {
   return (

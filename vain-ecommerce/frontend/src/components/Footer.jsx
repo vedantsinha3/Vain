@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '/Users/vedantsinha/Desktop/Vain/vain-ecommerce/frontend/src/styles/components/footer.css';
+import '../styles/components/footer.css';
 import Button from './Button';
 
 const Footer = () => {
