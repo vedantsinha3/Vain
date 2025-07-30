@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import ShopAll from './pages/ShopAll';
+import Collections from './pages/Collections';
 import Denim from './pages/Denim';
 import NewReleases from './pages/NewRelease';
 import Trending from './pages/Trending';
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="/shop-all" element={<ShopAll />} />
+        <Route path="/collections" element={<Collections />} />
         <Route path="/denim" element={<Denim />} />
         <Route path="/new-releases" element={<NewReleases />} />
         <Route path="/trending" element={<Trending />} />
