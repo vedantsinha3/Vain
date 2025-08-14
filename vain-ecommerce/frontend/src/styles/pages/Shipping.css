@@ -1,0 +1,294 @@
+/* Shipping Page - Consistent dark theme with blue accents */
+
+.shipping-hero {
+  background: #000000;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+  border-radius: 8px;
+  border: 1px solid #333333;
+  text-align: center;
+}
+
+.shipping-hero .hero-content h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #e8e9ea 40%, #f8f9fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shipping-hero .hero-content p {
+  color: #cccccc;
+  font-size: 1.125rem;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.shipping-hero .hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.shipping-hero .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shipping-hero .stat-number {
+  color: #3b82f6;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.shipping-hero .stat-label {
+  color: #cccccc;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Options */
+.shipping-options {
+  margin-bottom: 5rem;
+}
+
+.shipping-options h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.option-card {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+}
+
+.option-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  color: #3b82f6;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 4px;
+  background: rgba(59, 130, 246, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.option-card h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.option-price {
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.option-desc {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* Rates */
+.shipping-rates {
+  margin-bottom: 5rem;
+}
+
+.shipping-rates h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.rate-card {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.rate-card:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+}
+
+.rate-card h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.rate-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+}
+
+.rate-card li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #222222;
+}
+
+.rate-card li span:first-child {
+  color: #cccccc;
+}
+
+.rate-card li span:last-child {
+  color: #ffffff;
+}
+
+.rate-card .note {
+  color: #3b82f6;
+  font-size: 0.9rem;
+}
+
+/* Policies */
+.shipping-policies {
+  background: #000000;
+  padding: 4rem 2rem;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  margin-bottom: 4rem;
+}
+
+.shipping-policies h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.policies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.policy-item {
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.policy-item:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+}
+
+.policy-item h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.policy-item p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* CTA */
+.shipping-cta {
+  margin: 4rem 0;
+}
+
+.cta-box {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cta-box h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta-box p {
+  color: #cccccc;
+  margin-bottom: 1.25rem;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-btn.secondary {
+  border-color: #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shipping-hero {
+    padding: 2rem 1rem;
+  }
+
+  .shipping-hero .hero-content h2,
+  .shipping-options h2,
+  .shipping-rates h2,
+  .shipping-policies h2 {
+    font-size: 1.75rem;
+  }
+
+  .options-grid,
+  .rates-grid,
+  .policies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-actions {
+    flex-direction: column;
+  }
+}
+
